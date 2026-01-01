@@ -1,0 +1,17 @@
+{
+  "name": "directus-keep-alive",
+  "version": "1.0.0",
+  "description": "Keep-alive service for Directus on Render",
+  "main": "ping.js",
+  "scripts": {
+    "ping": "node ping.js"
+  },
+  "keywords": [
+    "directus",
+    "render",
+    "keep-alive",
+    "ping"
+  ],
+  "author": "",
+  "license": "MIT"
+}
