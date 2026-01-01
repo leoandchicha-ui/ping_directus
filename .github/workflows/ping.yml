@@ -1,23 +1,16 @@
-name: Keep Directus Alive
+name: Ping Directus Auth
 
 on:
   schedule:
-    # Запускается каждые 10 минут
-    - cron: '*/10 * * * *'
-  workflow_dispatch: # Позволяет запустить вручную
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Ping Directus
-        run: node ping.js
+      - name: Ping Directus Admin
+        run: |
+          curl --max-time 30 -I \
+            -H "Authorization: Bearer ${{ secrets.DIRECTUS_STATIC_TOKEN }}" \
+            https://smysl-bakery-directus.onrender.com/admin
