@@ -1,6 +1,6 @@
 const https = require('https');
 
-const DIRECTUS_URL = 'https://smysl-bakery-directus.onrender.com/server/health';
+const DIRECTUS_URL = 'https://smysl-bakery-directus.onrender.com/admin';
 
 function ping() {
   const startTime = Date.now();
